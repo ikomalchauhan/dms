@@ -4,14 +4,17 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/dms")
 public class MainController {
 
     @PostMapping("/api")
-    public ResponseEntity<ResponseObj> postAPI(@RequestHeader("X-ADOBESIGN-CLIENTID") String clientId, @RequestBody Map<String, Object>[] payload) {
+    public ResponseEntity<ResponseObj> postAPI(@RequestHeader("X-ADOBESIGN-CLIENTID") String clientId, @RequestBody Collection<? extends Map<String, Object>> payload) {
+        List<Map<String,Object>> maps = new ArrayList<Map<String,Object>>();
+        maps.addAll(payload);
+        System.out.println(Arrays.asList(maps));
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("X-AdobeSign-ClientId", clientId);
         ResponseObj obj = new ResponseObj();
