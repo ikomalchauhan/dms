@@ -11,7 +11,7 @@ import java.util.*;
 public class MainController {
 
     @PostMapping("/api")
-    public ResponseEntity<ResponseObj> postAPI(@RequestHeader("X-ADOBESIGN-CLIENTID") String clientId, @RequestBody Collection<? extends Map<String, Object>> payload) {
+    public ResponseEntity<ResponseObj> postAPI(@RequestHeader("X-ADOBESIGN-CLIENTID") String clientId, @RequestBody Collection<? extends Map<String, Object>> payload) throws Exception{
         List<Map<String,Object>> maps = new ArrayList<Map<String,Object>>();
         maps.addAll(payload);
         System.out.println(Arrays.asList(maps));
