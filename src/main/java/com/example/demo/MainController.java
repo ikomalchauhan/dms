@@ -15,6 +15,7 @@ public class MainController {
         ResponseObj obj = new ResponseObj();
         obj.setRequestType("POST API is working");
         obj.setxAdobeSignClientId(clientId);
+        System.out.println("POST API is working");
         return ResponseEntity.ok().headers(responseHeaders).body(obj);
     }
 
@@ -25,6 +26,7 @@ public class MainController {
         ResponseObj obj = new ResponseObj();
         obj.setRequestType("GET API is working");
         obj.setxAdobeSignClientId(clientId);
+        System.out.println("GET API is working");
         return ResponseEntity.ok().headers(responseHeaders).body(obj);
     }
 }
