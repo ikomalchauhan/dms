@@ -10,12 +10,13 @@ import java.util.*;
 @RequestMapping("/dms")
 public class MainController {
 
-    @RequestMapping(value = "/api", method = RequestMethod.POST, consumes = "text/plain")
-    public ResponseEntity<ResponseObj> postAPI(@RequestHeader("X-ADOBESIGN-CLIENTID") String clientId, @RequestBody String payload) throws Exception{
-        //        List<Map<String,Object>> maps = new ArrayList<Map<String,Object>>();
-//        maps.addAll(payload);
-//        System.out.println(Arrays.asList(maps));
-        System.out.println(payload);
+    @PostMapping("/api")
+    public ResponseEntity<ResponseObj> postAPI(@RequestHeader("X-ADOBESIGN-CLIENTID") String clientId, @RequestBody JSONObject payload) throws Exception {
+        Iterator<String> keys = payload.keys();
+        while (keys.hasNext()){
+            String key = keys.next();
+            System.out.println(key);
+        }
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("X-AdobeSign-ClientId", clientId);
         ResponseObj obj = new ResponseObj();
