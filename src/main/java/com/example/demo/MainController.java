@@ -13,12 +13,18 @@ import java.util.*;
 public class MainController {
 
     @PostMapping("/api")
-    public ResponseEntity<ResponseObj> postAPI(@RequestHeader("X-ADOBESIGN-CLIENTID") String clientId, @RequestBody JSONObject payload) throws Exception {
-        Iterator<String> keys = payload.keys();
-        while (keys.hasNext()){
-            String key = keys.next();
-            System.out.println(key);
-        }
+    public ResponseEntity<ResponseObj> postAPI(@RequestHeader("X-ADOBESIGN-CLIENTID") String clientId, @RequestBody DataDTO payload) throws Exception {
+//        List<Map<String,Object>> maps = new ArrayList<Map<String,Object>>();
+//        maps.addAll(payload);
+//        Iterator<String> keys = payload.keys();
+//        while (keys.hasNext()){
+//            String key = keys.next();
+//            System.out.println(key);
+//        }
+        System.out.println("Name : " + payload.getName());
+        System.out.println("Scope: " + payload.getScope());
+        System.out.println("State : " + payload.getState());
+        System.out.println("Events : " + payload.getWebhookSubscriptionEvents());
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("X-AdobeSign-ClientId", clientId);
         ResponseObj obj = new ResponseObj();
