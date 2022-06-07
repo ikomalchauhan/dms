@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Arrays;
+
 public class DataDTO {
     private String webhookSubscriptionEvents;
     private String scope;
@@ -36,5 +38,15 @@ public class DataDTO {
 
     public void setState(String[] state) {
         this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "DataDTO{" +
+                "webhookSubscriptionEvents='" + webhookSubscriptionEvents + '\'' +
+                ", scope='" + scope + '\'' +
+                ", name='" + name + '\'' +
+                ", state=" + Arrays.toString(state) +
+                '}';
     }
 }
