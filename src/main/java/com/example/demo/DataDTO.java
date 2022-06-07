@@ -3,50 +3,34 @@ package com.example.demo;
 import java.util.Arrays;
 
 public class DataDTO {
-    private String webhookSubscriptionEvents;
-    private String scope;
-    private String name;
-    private String[] state;
+    private String webhookId;
+    private String webhookName;
+    private String webhookNotificationId;
+    private String webhookScope;
 
-    public String getWebhookSubscriptionEvents() {
-        return webhookSubscriptionEvents;
+    public void setWebhookId(String webhookId) {
+        this.webhookId = webhookId;
     }
 
-    public void setWebhookSubscriptionEvents(String webhookSubscriptionEvents) {
-        this.webhookSubscriptionEvents = webhookSubscriptionEvents;
+    public void setWebhookName(String webhookName) {
+        this.webhookName = webhookName;
     }
 
-    public String getScope() {
-        return scope;
+    public void setWebhookNotificationId(String webhookNotificationId) {
+        this.webhookNotificationId = webhookNotificationId;
     }
 
-    public void setScope(String scope) {
-        this.scope = scope;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String[] getState() {
-        return state;
-    }
-
-    public void setState(String[] state) {
-        this.state = state;
+    public void setWebhookScope(String webhookScope) {
+        this.webhookScope = webhookScope;
     }
 
     @Override
     public String toString() {
         return "DataDTO{" +
-                "webhookSubscriptionEvents='" + webhookSubscriptionEvents + '\'' +
-                ", scope='" + scope + '\'' +
-                ", name='" + name + '\'' +
-                ", state=" + Arrays.toString(state) +
+                "webhookId='" + webhookId + '\'' +
+                ", webhookName='" + webhookName + '\'' +
+                ", webhookNotificationId='" + webhookNotificationId + '\'' +
+                ", webhookScope='" + webhookScope + '\'' +
                 '}';
     }
 }
