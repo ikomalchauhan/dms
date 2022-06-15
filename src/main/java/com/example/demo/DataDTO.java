@@ -7,6 +7,7 @@ public class DataDTO {
     private String webhookName;
     private String webhookNotificationId;
     private String webhookScope;
+    private Agreement agreement;
 
     public void setWebhookId(String webhookId) {
         this.webhookId = webhookId;
@@ -24,6 +25,30 @@ public class DataDTO {
         this.webhookScope = webhookScope;
     }
 
+    public String getWebhookId() {
+        return webhookId;
+    }
+
+    public String getWebhookName() {
+        return webhookName;
+    }
+
+    public String getWebhookNotificationId() {
+        return webhookNotificationId;
+    }
+
+    public String getWebhookScope() {
+        return webhookScope;
+    }
+
+    public Agreement getAgreement() {
+        return agreement;
+    }
+
+    public void setAgreement(Agreement agreement) {
+        this.agreement = agreement;
+    }
+
     @Override
     public String toString() {
         return "DataDTO{" +
@@ -31,6 +56,7 @@ public class DataDTO {
                 ", webhookName='" + webhookName + '\'' +
                 ", webhookNotificationId='" + webhookNotificationId + '\'' +
                 ", webhookScope='" + webhookScope + '\'' +
+                ", agreement=" + agreement +
                 '}';
     }
 }
